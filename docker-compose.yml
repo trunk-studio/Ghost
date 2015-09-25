@@ -4,6 +4,10 @@ web:
 
   command: "/bin/bash -l -c 'npm start --porduction'"
 
+  ports:
+    - "2368:2368"
+
+
   working_dir: /ghost
   volumes:
     - ./:/ghost
