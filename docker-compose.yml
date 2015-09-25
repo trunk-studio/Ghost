@@ -1,0 +1,11 @@
+web:
+  container_name: ghost_env
+  image: trunk/ghost_env
+
+  command: "/bin/bash -l -c 'npm start --porduction'"
+
+  working_dir: /ghost
+  volumes:
+    - ./:/ghost
+
+  restart: always

@@ -11,8 +11,14 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: 'http://blog.trunk-studio.com/',
+        mail: {
+          transport: 'SES',
+          options: {
+            AWSAccessKeyID: "",
+            AWSSecretKey: ""
+          }
+        },
         database: {
             client: 'sqlite3',
             connection: {
