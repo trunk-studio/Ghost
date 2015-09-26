@@ -2,7 +2,7 @@ build:
   container_name: ghost_build
   image: trunk/ghost_env
 
-  command: "/bin/bash -l -c 'npm i sqlite3 --no-bin-links'"
+  command: "/bin/bash -l -c 'npm i --no-bin-links && npm i sqlite3 --no-bin-links  && git submodule update --remote --merge && grunt init && grunt prod'"
 
   working_dir: /ghost
   volumes:
