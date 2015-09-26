@@ -1,11 +1,23 @@
+build:
+  container_name: ghost_build
+  image: trunk/ghost_env
+
+  command: "/bin/bash -l -c 'npm i sqlite3 --no-bin-links'"
+
+  working_dir: /ghost
+  volumes:
+    - ./:/ghost
+
+
+
 web:
   container_name: ghost_env
   image: trunk/ghost_env
 
-  command: "/bin/bash -l -c 'npm start --porduction'"
+  command: "/bin/bash -l -c 'npm start --production'"
 
   ports:
-    - "2368:2368"
+    - 80:2368
 
 
   working_dir: /ghost
