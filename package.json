@@ -18,6 +18,7 @@
   "license": "MIT",
   "main": "./core/index",
   "scripts": {
+    "build": "npm i && git submodule update --remote --merge && grunt init && grunt prod",
     "start": "node index",
     "test": "grunt validate --verbose"
   },
